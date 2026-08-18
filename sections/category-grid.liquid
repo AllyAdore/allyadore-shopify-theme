@@ -1,6 +1,7 @@
 <section class="category-grid">
   <div class="container">
     <div class="categories">
+      <!-- Best Sellers Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_1_image %}
@@ -10,8 +11,10 @@
           {% endif %}
         </div>
         <h3 class="category-title">Best Sellers</h3>
+        <a href="/collections/best-sellers" class="category-link">Shop Now →</a>
       </div>
 
+      <!-- Fragrances for Her Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_2_image %}
@@ -21,8 +24,10 @@
           {% endif %}
         </div>
         <h3 class="category-title">Fragrances for Her</h3>
+        <a href="/collections/fragrances-for-her" class="category-link">Shop Now →</a>
       </div>
 
+      <!-- Fragrances for Him Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_3_image %}
@@ -32,8 +37,10 @@
           {% endif %}
         </div>
         <h3 class="category-title">Fragrances for Him</h3>
+        <a href="/collections/fragrances-for-him" class="category-link">Shop Now →</a>
       </div>
 
+      <!-- Mists & Lotions Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_4_image %}
@@ -43,8 +50,10 @@
           {% endif %}
         </div>
         <h3 class="category-title">Mists & Lotions</h3>
+        <a href="/collections/mists-and-lotions" class="category-link">Shop Now →</a>
       </div>
 
+      <!-- Bath & Body Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_5_image %}
@@ -54,8 +63,10 @@
           {% endif %}
         </div>
         <h3 class="category-title">Bath & Body</h3>
+        <a href="/collections/bath-and-body" class="category-link">Shop Now →</a>
       </div>
 
+      <!-- Gift Sets Category -->
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_6_image %}
@@ -65,14 +76,55 @@
           {% endif %}
         </div>
         <h3 class="category-title">Gift Sets</h3>
+        <a href="/collections/gift-sets" class="category-link">Shop Now →</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Featured Products Section by Category -->
+{% for i in (1..6) %}
+  {% if section.settings["collection_" | append: i] %}
+    <section class="featured-products-section">
+      <div class="container">
+        <h2 class="section-title">
+          {% if i == 1 %}
+            Best Sellers
+          {% elsif i == 2 %}
+            Fragrances for Her
+          {% elsif i == 3 %}
+            Fragrances for Him
+          {% elsif i == 4 %}
+            Mists & Lotions
+          {% elsif i == 5 %}
+            Bath & Body
+          {% elsif i == 6 %}
+            Gift Sets
+          {% endif %}
+        </h2>
+        <div class="products-grid">
+          {% assign collection = collections[section.settings["collection_" | append: i]] %}
+          {% for product in collection.products limit: 4 %}
+            <div class="product-card">
+              <div class="product-image">
+                {% if product.featured_image %}
+                  <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}" />
+                {% endif %}
+              </div>
+              <h3 class="product-title">{{ product.title }}</h3>
+              <p class="product-price">{{ product.price | money }}</p>
+              <a href="{{ product.url }}" class="product-btn">View Product</a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
+
 {% schema %}
 {
-  "name": "Category Grid",
+  "name": "Category Grid with Products",
   "settings": [
     {
       "type": "image_picker",
@@ -80,9 +132,19 @@
       "label": "Best Sellers Image"
     },
     {
+      "type": "collection",
+      "id": "collection_1",
+      "label": "Best Sellers Collection"
+    },
+    {
       "type": "image_picker",
       "id": "category_2_image",
       "label": "Fragrances for Her Image"
+    },
+    {
+      "type": "collection",
+      "id": "collection_2",
+      "label": "Fragrances for Her Collection"
     },
     {
       "type": "image_picker",
@@ -90,9 +152,19 @@
       "label": "Fragrances for Him Image"
     },
     {
+      "type": "collection",
+      "id": "collection_3",
+      "label": "Fragrances for Him Collection"
+    },
+    {
       "type": "image_picker",
       "id": "category_4_image",
       "label": "Mists & Lotions Image"
+    },
+    {
+      "type": "collection",
+      "id": "collection_4",
+      "label": "Mists & Lotions Collection"
     },
     {
       "type": "image_picker",
@@ -100,9 +172,19 @@
       "label": "Bath & Body Image"
     },
     {
+      "type": "collection",
+      "id": "collection_5",
+      "label": "Bath & Body Collection"
+    },
+    {
       "type": "image_picker",
       "id": "category_6_image",
       "label": "Gift Sets Image"
+    },
+    {
+      "type": "collection",
+      "id": "collection_6",
+      "label": "Gift Sets Collection"
     }
   ]
 }
