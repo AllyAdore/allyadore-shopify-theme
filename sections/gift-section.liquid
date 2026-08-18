@@ -1,15 +1,15 @@
 <section class="gift-section">
   <div class="gift-container">
+    <div class="gift-content">
+      <h2 class="gift-title">The Perfect Gift —<br>For Them or You</h2>
+      <p class="gift-subtitle">Find curated sets & personalized presents</p>
+    </div>
     <div class="gift-image">
       {% if section.settings.gift_image %}
         <img src="{{ section.settings.gift_image | img_url: '800x600' }}" alt="Gift" />
       {% else %}
         <div class="gift-placeholder">Add Gift Image</div>
       {% endif %}
-    </div>
-    <div class="gift-content">
-      <h2 class="gift-title">The Perfect Gift —<br>For Them or For You</h2>
-      <p class="gift-subtitle">Fragrances and gift sets for everyone you adore</p>
     </div>
   </div>
 </section>

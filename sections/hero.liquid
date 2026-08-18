@@ -1,16 +1,16 @@
 <section class="hero">
   <div class="hero-container">
+    <div class="hero-content">
+      <h2 class="hero-title">Be You,<br>Adore Yourself</h2>
+      <p class="hero-subtitle">Discover your signature scent & glow</p>
+      <a href="#" class="hero-btn">Shop Now</a>
+    </div>
     <div class="hero-image">
       {% if section.settings.hero_image %}
         <img src="{{ section.settings.hero_image | img_url: '800x600' }}" alt="Hero" />
       {% else %}
         <div class="hero-placeholder">Add Hero Image</div>
       {% endif %}
-    </div>
-    <div class="hero-content">
-      <h2 class="hero-title">Be You,<br>Adore Yourself</h2>
-      <p class="hero-subtitle">Luxurious fragrances and skincare beyond beliefs</p>
-      <a href="#" class="hero-btn">Shop Now</a>
     </div>
   </div>
 </section>

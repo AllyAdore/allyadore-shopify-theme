@@ -6,7 +6,7 @@
           {% if section.settings.category_1_image %}
             <img src="{{ section.settings.category_1_image | img_url: '400x300' }}" alt="Best Sellers" />
           {% else %}
-            <div class="category-placeholder">Best Sellers Image</div>
+            <div class="category-placeholder">Best Sellers</div>
           {% endif %}
         </div>
         <h3 class="category-title">Best Sellers</h3>
@@ -17,7 +17,7 @@
           {% if section.settings.category_2_image %}
             <img src="{{ section.settings.category_2_image | img_url: '400x300' }}" alt="Fragrances for Her" />
           {% else %}
-            <div class="category-placeholder">Fragrances for Her Image</div>
+            <div class="category-placeholder">Fragrances for Her</div>
           {% endif %}
         </div>
         <h3 class="category-title">Fragrances for Her</h3>
@@ -26,9 +26,20 @@
       <div class="category-card">
         <div class="category-image">
           {% if section.settings.category_3_image %}
-            <img src="{{ section.settings.category_3_image | img_url: '400x300' }}" alt="Mists & Lotions" />
+            <img src="{{ section.settings.category_3_image | img_url: '400x300' }}" alt="Fragrances for Him" />
           {% else %}
-            <div class="category-placeholder">Mists & Lotions Image</div>
+            <div class="category-placeholder">Fragrances for Him</div>
+          {% endif %}
+        </div>
+        <h3 class="category-title">Fragrances for Him</h3>
+      </div>
+
+      <div class="category-card">
+        <div class="category-image">
+          {% if section.settings.category_4_image %}
+            <img src="{{ section.settings.category_4_image | img_url: '400x300' }}" alt="Mists & Lotions" />
+          {% else %}
+            <div class="category-placeholder">Mists & Lotions</div>
           {% endif %}
         </div>
         <h3 class="category-title">Mists & Lotions</h3>
@@ -36,13 +47,24 @@
 
       <div class="category-card">
         <div class="category-image">
-          {% if section.settings.category_4_image %}
-            <img src="{{ section.settings.category_4_image | img_url: '400x300' }}" alt="Bath & Body" />
+          {% if section.settings.category_5_image %}
+            <img src="{{ section.settings.category_5_image | img_url: '400x300' }}" alt="Bath & Body" />
           {% else %}
-            <div class="category-placeholder">Bath & Body Image</div>
+            <div class="category-placeholder">Bath & Body</div>
           {% endif %}
         </div>
         <h3 class="category-title">Bath & Body</h3>
+      </div>
+
+      <div class="category-card">
+        <div class="category-image">
+          {% if section.settings.category_6_image %}
+            <img src="{{ section.settings.category_6_image | img_url: '400x300' }}" alt="Gift Sets" />
+          {% else %}
+            <div class="category-placeholder">Gift Sets</div>
+          {% endif %}
+        </div>
+        <h3 class="category-title">Gift Sets</h3>
       </div>
     </div>
   </div>
@@ -65,12 +87,22 @@
     {
       "type": "image_picker",
       "id": "category_3_image",
-      "label": "Mists & Lotions Image"
+      "label": "Fragrances for Him Image"
     },
     {
       "type": "image_picker",
       "id": "category_4_image",
+      "label": "Mists & Lotions Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_5_image",
       "label": "Bath & Body Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "category_6_image",
+      "label": "Gift Sets Image"
     }
   ]
 }
