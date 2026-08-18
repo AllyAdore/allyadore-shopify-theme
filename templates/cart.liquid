@@ -1,0 +1,38 @@
+<div class="container cart-page">
+  <h1>Shopping Cart</h1>
+  
+  {% if cart.item_count > 0 %}
+    <form method="post" action="/cart">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td>{{ item.product.title }}</td>
+              <td>{{ item.price | money }}</td>
+              <td>
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" />
+              </td>
+              <td>{{ item.total_price | money }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <div class="cart-summary">
+        <p>Subtotal: {{ cart.total_price | money }}</p>
+        <button type="submit" class="btn btn-secondary">Update Cart</button>
+        <a href="/checkout" class="btn btn-primary">Proceed to Checkout</a>
+      </div>
+    </form>
+  {% else %}
+    <p>Your cart is empty. <a href="/collections/all">Continue shopping</a></p>
+  {% endif %}
+</div>

@@ -1,0 +1,45 @@
+<section class="hero" style="background-image: url('{{ section.settings.hero_image | img_url }}'); background-size: cover; background-position: center;">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2 class="hero-title">{{ section.settings.hero_title }}</h2>
+      <p class="hero-subtitle">{{ section.settings.hero_subtitle }}</p>
+      <a href="{{ section.settings.cta_link }}" class="btn btn-primary">{{ section.settings.cta_text }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "text",
+      "id": "hero_title",
+      "label": "Hero Title",
+      "default": "Be You, Adore Yourself"
+    },
+    {
+      "type": "text",
+      "id": "hero_subtitle",
+      "label": "Hero Subtitle",
+      "default": "Luxurious fragrances and skincare beyond beliefs"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Shop Now"
+    }
+  ]
+}
+{% endschema %}

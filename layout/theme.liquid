@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_title }}</title>
+  {{ content_for_header }}
+  <link rel="stylesheet" href="{{ 'base.css' | asset_url }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  {% section 'header' %}
+  <main id="MainContent" class="content-wrapper">
+    {{ content_for_layout }}
+  </main>
+  {% section 'footer' %}
+  <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
+</body>
+</html>

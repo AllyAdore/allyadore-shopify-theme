@@ -1,0 +1,35 @@
+<section class="featured-products">
+  <div class="container">
+    <h2 class="section-title">{{ section.settings.title }}</h2>
+    <div class="products-grid">
+      {% for product in collections.featured.products limit: 4 %}
+        <div class="product-card">
+          <div class="product-image">
+            {% if product.featured_image %}
+              <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}" />
+            {% endif %}
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">{{ product.title }}</h3>
+            <p class="product-price">{{ product.price | money }}</p>
+            <a href="{{ product.url }}" class="btn btn-secondary">View Product</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Best Sellers"
+    }
+  ]
+}
+{% endschema %}

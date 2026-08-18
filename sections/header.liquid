@@ -1,0 +1,43 @@
+<header class="header">
+  <div class="header-top">
+    <p class="header-message">{{ section.settings.promo_text }}</p>
+  </div>
+  
+  <div class="header-main">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <h1>{{ shop.name }}</h1>
+        </div>
+        
+        <nav class="navigation">
+          <ul class="nav-menu">
+            {% for link in linklists.main-menu.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </nav>
+        
+        <div class="header-icons">
+          <a href="/search" class="icon-link">Search</a>
+          <a href="/account" class="icon-link">Account</a>
+          <a href="/cart" class="icon-link">Cart ({{ cart.item_count }})</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "promo_text",
+      "label": "Promo Text",
+      "default": "Be You. Adore Yourself"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+<section class="gift-section">
+  <div class="gift-content">
+    <div class="gift-image">
+      {% if section.settings.gift_image %}
+        <img src="{{ section.settings.gift_image | img_url: '600x600' }}" alt="Gift" />
+      {% endif %}
+    </div>
+    <div class="gift-text">
+      <h2>{{ section.settings.gift_title }}</h2>
+      <p>{{ section.settings.gift_description }}</p>
+      <a href="{{ section.settings.gift_link }}" class="btn btn-primary">{{ section.settings.gift_cta }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gift Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "gift_image",
+      "label": "Gift Image"
+    },
+    {
+      "type": "text",
+      "id": "gift_title",
+      "label": "Title",
+      "default": "The Perfect Gift"
+    },
+    {
+      "type": "richtext",
+      "id": "gift_description",
+      "label": "Description",
+      "default": "<p>For Them or For You - Fragrances and gift sets for everyone you adore</p>"
+    },
+    {
+      "type": "url",
+      "id": "gift_link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "gift_cta",
+      "label": "CTA Text",
+      "default": "Shop Gifts"
+    }
+  ]
+}
+{% endschema %}

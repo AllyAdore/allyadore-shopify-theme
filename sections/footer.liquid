@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3>About AllyAdore</h3>
+          <p>{{ shop.metafields.custom.about_text | default: 'Premium fragrances and beauty products for the modern you.' }}</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            {% for link in linklists.footer.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Info</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link">Instagram</a>
+            <a href="#" class="social-link">Facebook</a>
+            <a href="#" class="social-link">TikTok</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved. Because you deserve to be adored.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer"
+}
+{% endschema %}
