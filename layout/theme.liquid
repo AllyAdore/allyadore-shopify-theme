@@ -10,10 +10,10 @@
 </head>
 <body>
   {% section 'header' %}
-  <main id="MainContent" class="content-wrapper">
+  <main id="MainContent">
     {{ content_for_layout }}
   </main>
   {% section 'footer' %}
-  <script src="{{ 'base.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'base.js' | asset_url }}"></script>
 </body>
 </html>
