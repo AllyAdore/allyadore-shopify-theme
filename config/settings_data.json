@@ -1,5 +1,55 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "current": "Default",
+  "current": {
+    "palette": {
+      "colors": {
+        "primary": "#8B6F47",
+        "secondary": "#D4A574",
+        "accent": "#F5E6D3",
+        "text": "#2C2C2C",
+        "background": "#FFFFFF"
+      }
+    },
+    "typography": {
+      "font_family_heading": "'Playfair Display', serif",
+      "font_family_body": "'Poppins', sans-serif"
+    },
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "hero_image": "shopify://shop_images/allyadore-hero-light-skinned-black-woman-no-text.png"
+        }
+      },
+      "category-grid": {
+        "type": "category-grid",
+        "settings": {}
+      },
+      "gift-section": {
+        "type": "gift-section",
+        "settings": {
+          "gift_image": "shopify://shop_images/allyadore-gift-section-no-text.png"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  },
   "presets": {
     "Default": {
       "palette": {
